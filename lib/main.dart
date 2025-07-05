@@ -34,12 +34,18 @@ class _GreetState extends State<Greet> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Hello $name"),
-        TextField(
-          onChanged:
-              (value) => setState(() {
-                name = value;
-              }),
+        Text("Hello $name", style: const TextStyle(fontSize: 24)),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onChanged:
+                  (value) => setState(() {
+                    name = value;
+                  }),
+            ),
+          ),
         ),
       ],
     );
