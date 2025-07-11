@@ -19,38 +19,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Greet extends StatefulWidget {
-  const Greet({super.key});
-
-  @override
-  State<Greet> createState() => _GreetState();
-}
-
-class _GreetState extends State<Greet> {
-  var name = "";
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("Hello $name", style: const TextStyle(fontSize: 24)),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              onChanged:
-                  (value) => setState(() {
-                    name = value;
-                  }),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class PersonName extends StatefulWidget {
   const PersonName({super.key});
 
@@ -85,9 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Image.asset("images/logo.png"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Center(child: Image.asset("images/logo.png")),
       ),
       body: OffersPage(),
       floatingActionButton: FloatingActionButton(
