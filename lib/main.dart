@@ -41,9 +41,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    var selectedIndex = 0;
+    Widget currentWidgetPage = Text("!!!1");
+
+    switch (selectedIndex) {
+      case 0:
+        currentWidgetPage = const Text("menu page");
+        break;
+      case 1:
+        currentWidgetPage = OffersPage();
+        break;
+      case 2:
+        currentWidgetPage = const Text("orders page");
+        break;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -69,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: OffersPage(),
+      body: currentWidgetPage,
     );
   }
 }
