@@ -59,14 +59,17 @@ class Offer extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Center(
-                  child: Container(
-                    color: Colors.amber.shade50,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        title,
-                        style: Theme.of(context).textTheme.headlineMedium,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Container(
+                      color: Colors.amber.shade50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          title,
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
                       ),
                     ),
                   ),
@@ -75,7 +78,6 @@ class Offer extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Container(
-                      color: Colors.amber.shade50,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
