@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Coffee Masters',
-      theme: ThemeData(primarySwatch: Colors.brown),
+      theme: ThemeData(primaryColor: Colors.brown, primarySwatch: Colors.brown),
       home: const MyHomePage(),
     );
   }
@@ -41,27 +41,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    var selectedIndex = 0;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Center(child: Image.asset("images/logo.png")),
       ),
-      body: OffersPage(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: (newIndex) {
+          selectedIndex = newIndex;
+        },
+        backgroundColor: Theme.of(context).primaryColor,
+        selectedItemColor: Colors.yellow.shade400,
+        unselectedItemColor: Colors.brown.shade50,
+        items: [
+          BottomNavigationBarItem(label: "Menu", icon: Icon(Icons.coffee)),
+          BottomNavigationBarItem(
+            label: "Offers",
+            icon: Icon(Icons.local_offer),
+          ),
+          BottomNavigationBarItem(
+            label: "Order",
+            icon: Icon(Icons.shopping_cart_checkout_outlined),
+          ),
+        ],
       ),
+      body: OffersPage(),
     );
   }
 }

@@ -5,9 +5,33 @@ class OffersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Offer(
-      title: "My great offer ever",
-      description: "Buy 1, get 10 for free",
+    return ListView(
+      children: [
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+        Offer(
+          title: "My great offer ever",
+          description: "Buy 1, get 10 for free",
+        ),
+      ],
     );
   }
 }
@@ -36,15 +60,30 @@ class Offer extends StatelessWidget {
             child: Column(
               children: [
                 Center(
-                  child: Text(
-                    title,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                  child: Container(
+                    color: Colors.amber.shade50,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        title,
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                    ),
                   ),
                 ),
-                Center(
-                  child: Text(
-                    description,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Container(
+                      color: Colors.amber.shade50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          description,
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
