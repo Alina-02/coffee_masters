@@ -1,7 +1,10 @@
+import 'package:coffee_masters/datamanager.dart';
 import 'package:flutter/material.dart';
 
 class OffersPage extends StatelessWidget {
-  const OffersPage({super.key});
+  final DataManager dataManager;
+
+  const OffersPage({super.key, required this.dataManager});
 
   @override
   Widget build(BuildContext context) {
